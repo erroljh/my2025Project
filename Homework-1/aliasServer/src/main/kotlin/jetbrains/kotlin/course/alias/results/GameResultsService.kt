@@ -1,10 +1,17 @@
 package jetbrains.kotlin.course.alias.results
 
 import org.springframework.stereotype.Service
+import java.util.ArrayList
 
 @Service
 class GameResultsService {
-    fun saveGameResults(result: GameResult): Unit = TODO("Not implemented yet")
+    private val gameResults = ArrayList<GameResult>()
 
-    fun getAllGameResults(): List<GameResult> = TODO("Not implemented yet")
+    fun saveGameResults(result: GameResult) {
+        gameResults.add(result)
+    }
+
+    fun getAllGameResults(): List<GameResult> {
+        return gameResults.toList()
+    }
 }
